@@ -17,9 +17,23 @@ Route::get('/', 'HomeController@index');
 
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/home', 'HomeController@show');
-    Route::get('/issues', 'IssuesController@index');
-    Route::get('/projects', 'ProjectsController@index');
-    Route::get('/customers', 'CustomersController@index');
-    Route::get('/departments', 'DepartmentsController@index');
-});
 
+    Route::get('/departments', 'DepartmentsController@index');
+    Route::get('/departments/create', 'DepartmentsController@create');
+    Route::post('/departments/create', 'DepartmentsController@store');
+    Route::get('/departments/{department}', 'DepartmentsController@show');
+
+    Route::get('/customers', 'CustomersController@index');
+    Route::get('/customers/create', 'CustomersController@create');
+    Route::post('/customers/create', 'CustomersController@store');
+    Route::get('/customers/{customer}', 'CustomersController@show');
+
+    Route::get('/projects', 'ProjectsController@index');
+
+    Route::get('/issues', 'IssuesController@index');
+
+    Route::get('/logout', function(){
+        auth()->logout();
+        return redirect('/');
+    });
+});
