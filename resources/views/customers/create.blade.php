@@ -11,8 +11,7 @@
             @include('layouts.errors')
 
             <form method="POST" action="/customers/create">
-
-                {{ csrf_field() }}
+                @csrf
 
                 <div class="input-field">
                     <input type="text" id="customer_name" name="customer_name" maxlength="50">
@@ -30,7 +29,7 @@
                 </div>
 
                 <div>
-                    <button class="btn btn-primary">Save</button>
+                    <button class="btn btn-primary light-blue darken-2">Save</button>
                 </div>
 
             </form>

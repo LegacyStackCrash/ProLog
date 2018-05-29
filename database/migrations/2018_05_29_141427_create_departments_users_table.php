@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersDepartmentsTable extends Migration
+class CreateDepartmentsUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateUsersDepartmentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('users_departments', function (Blueprint $table) {
+        Schema::create('departments_users', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->references('id')->on('users');
             $table->integer('department_id')->references('id')->on('departments');
+            $table->integer('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateUsersDepartmentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users_departments');
+        Schema::dropIfExists('departments_users');
     }
 }

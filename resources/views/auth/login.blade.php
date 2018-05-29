@@ -1,63 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-    <title>ProLog - The Beginning of Simple Project Management</title>
+@extends('auth.layout')
 
-    <!-- CSS  -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="/materialize/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <link href="/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-</head>
-<body>
+@section('content')
 
-<div class="container">
-    <div class="row">
-        <div class="col s6 offset-s3">
-            <form method="POST" action="{{ route('login') }}">
-                @csrf
+    <h4 class="center-align">ProLog - Project Management</h4>
 
-                <h3 class="center-align">Sign In</h3>
+    <hr/>
 
-                <div class="input-field">
-                    <input type="text" name="email" id="email" placeholder="Email address" />
-                </div>
+    @include('layouts.errors')
 
-                <div class="input-field">
-                    <input type="password" name="password" id="password" placeholder="Password" />
-                </div>
+    <form method="POST" action="{{ route('login') }}">
+        @csrf
 
-                <br/>
-
-                <div>
-                    <label>
-                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>
-                        <span>{{ __('Remember Me') }}</span>
-                    </label>
-                </div>
-
-                <br/>
-
-                <div>
-                    <div class="col-md-8 offset-md-4">
-                        <button type="submit" class="btn btn-blue">
-                            {{ __('Login') }}
-                        </button>
-
-                        <a class="btn btn-link" href="{{ route('password.request') }}">
-                            {{ __('Forgot Your Password?') }}
-                        </a>
-                    </div>
-                </div>
-            </form>
+        <div class="input-field">
+            <input type="email" id="email" name="email" maxlength="250" value="{{ old('email') }}" required>
+            <label for="email">Email</label>
         </div>
-    </div>
-</div>
 
-<!--  Scripts-->
-<script src="/jquery/jquery.min.js"></script>
-<script src="/materialize/materialize.min.js"></script>
+        <div class="input-field">
+            <input type="password" id="password" name="password" required>
+            <label for="password">Password</label>
+        </div>
 
-</body>
-</html>
+        <br/>
+
+        <div>
+            <label>
+                <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>
+                <span>{{ __('Remember Me') }}</span>
+            </label>
+        </div>
+
+        <br/>
+
+        <div>
+            <div class="col-md-8 offset-md-4">
+                <button type="submit" class="btn light-blue darken-2">
+                    {{ __('Login') }}
+                </button>
+
+                <a class="btn light-blue darken-2" href="{{ route('password.request') }}">
+                    {{ __('Forgot Password?') }}
+                </a>
+            </div>
+        </div>
+
+        <hr/>
+
+        <div class="center-align">
+            Chase Terry {{ date('Y') }}
+        </div>
+    </form>
+
+@endsection
