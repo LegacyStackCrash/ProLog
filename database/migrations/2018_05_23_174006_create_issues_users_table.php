@@ -15,10 +15,10 @@ class CreateIssuesUsersTable extends Migration
     {
         Schema::create('issues_users', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('issue_id');
-            $table->foreign('issue_id')->references('id')->on('issues');
-            $table->unsignedInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedInteger('issues_id');
+            $table->foreign('issues_id')->references('id')->on('issues');
+            $table->unsignedInteger('users_id');
+            $table->foreign('users_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

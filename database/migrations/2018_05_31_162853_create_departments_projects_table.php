@@ -15,10 +15,10 @@ class CreateDepartmentsProjectsTable extends Migration
     {
         Schema::create('departments_projects', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('project_id');
-            $table->foreign('project_id')->references('id')->on('projects');
-            $table->unsignedInteger('department_id');
-            $table->foreign('department_id')->references('id')->on('departments');
+            $table->unsignedInteger('projects_id');
+            $table->foreign('projects_id')->references('id')->on('projects');
+            $table->unsignedInteger('departments_id');
+            $table->foreign('departments_id')->references('id')->on('departments');
             $table->timestamps();
         });
     }
