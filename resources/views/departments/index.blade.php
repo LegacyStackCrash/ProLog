@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="row">
-        <div class="col m12">
+        <div class="col m12 s12">
             <h4>Departments</h4>
 
             <a href="/departments/create" class="btn btn-link light-blue darken-2">New Department</a>
