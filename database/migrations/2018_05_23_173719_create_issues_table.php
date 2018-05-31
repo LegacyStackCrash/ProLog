@@ -20,10 +20,10 @@ class CreateIssuesTable extends Migration
             $table->char('issue_status', 1);
             $table->text('issue_details');
             $table->dateTime('issue_date_time');
-            $table->dateTime('issue_date_time_completed');
-            $table->integer('issue_duration_days');
-            $table->integer('issue_duration_hours');
-            $table->integer('issue_duration_minutes');
+            $table->dateTime('issue_date_time_completed')->nullable();
+            $table->integer('issue_duration_days')->nullable();
+            $table->integer('issue_duration_hours')->nullable();
+            $table->integer('issue_duration_minutes')->nullable();
             $table->timestamps();
         });
     }
