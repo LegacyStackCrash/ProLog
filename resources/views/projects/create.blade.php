@@ -41,9 +41,9 @@
                 <div class="input-field col m12">
                     <select name="project_status">
                         <option value="" disabled selected>Choose a Status...</option>
-                        <option value="1">Option 1</option>
-                        <option value="2">Option 2</option>
-                        <option value="3">Option 3</option>
+                        <option value="I">Incomplete</option>
+                        <option value="C">Complete</option>
+                        <option value="A">Archived</option>
                     </select>
                     <label>Project Status</label>
                 </div>

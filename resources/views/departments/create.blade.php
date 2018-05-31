@@ -14,13 +14,13 @@
 
                 {{ csrf_field() }}
 
-                <div class="input-field">
+                <div class="input-field col m12">
                     <input type="text" id="department_name" name="department_name" maxlength="50">
                     <label for="department_name">Department Name</label>
                 </div>
 
-                <div>
-                    <button class="btn btn-primary">Save</button>
+                <div class="col m12">
+                    <button class="btn light-blue darken-2">Save</button>
                 </div>
 
             </form>

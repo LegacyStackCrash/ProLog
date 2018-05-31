@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Projects;
+use App\Departments;
+use App\Customers;
+use App\User;
+
 
 class ProjectsController extends Controller
 {
@@ -25,7 +29,11 @@ class ProjectsController extends Controller
 
     public function create()
     {
-        return view('projects.create');
+        $departments = Departments::orderBy('department_name')->get();
+        $customers = Customers::orderBy('customer_name')->get();
+        $users = User::orderBy('name')->get();
+
+        return view('projects.create', compact('departments', 'customers', 'users'));
     }
 
     public function store()
