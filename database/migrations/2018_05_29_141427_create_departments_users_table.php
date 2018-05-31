@@ -15,8 +15,10 @@ class CreateDepartmentsUsersTable extends Migration
     {
         Schema::create('departments_users', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('department_id')->references('id')->on('departments');
-            $table->integer('user_id')->references('id')->on('users');
+            $table->unsignedInteger('department_id');
+            $table->foreign('department_id')->references('id')->on('departments');
+            $table->unsignedInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
