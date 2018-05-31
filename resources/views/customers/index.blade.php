@@ -8,7 +8,7 @@
 
             <a href="/customers/create" class="btn btn-link light-blue darken-2">New Customer</a>
 
-            <table class="striped datatable">
+            <table class="striped">
                 <thead>
                 <tr>
                     <th>Customer Name</th>

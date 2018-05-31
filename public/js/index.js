@@ -17,7 +17,7 @@ $(function(){
 
     $('.datatable').DataTable({
         dom: 'lfrtBip',
-        "order": [[1, "desc"]],
+        "order": [[0, "desc"]],
         iDisplayLength: 50,
         buttons: ['copy', 'print', 'excel', 'pdf'],
         language: {

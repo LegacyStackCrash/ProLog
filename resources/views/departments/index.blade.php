@@ -8,7 +8,7 @@
 
             <a href="/departments/create" class="btn btn-link light-blue darken-2">New Department</a>
 
-            <table class="striped datatable">
+            <table class="striped">
                 <thead>
                 <tr>
                     <th width="85%">Department Name</th>

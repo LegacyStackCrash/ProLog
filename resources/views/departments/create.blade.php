@@ -4,9 +4,7 @@
 
     <div class="row">
         <div class="col m12">
-            <h3>New Department</h3>
-
-            <br/>
+            <h4>New Department</h4>
 
             @include('layouts.errors')
 
@@ -14,12 +12,12 @@
 
                 {{ csrf_field() }}
 
-                <div class="input-field col m12">
+                <div class="input-field col m12 s12">
                     <input type="text" id="department_name" name="department_name" maxlength="50">
                     <label for="department_name">Department Name</label>
                 </div>
 
-                <div class="col m12">
+                <div class="col m12 s12">
                     <button class="btn light-blue darken-2">Save</button>
                 </div>
 
