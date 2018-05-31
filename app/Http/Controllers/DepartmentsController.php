@@ -38,9 +38,9 @@ class DepartmentsController extends Controller
         return redirect('departments');
     }
 
-    public function destroy()
+    public function destroy(Departments $department)
     {
-
+        $department->delete();
 
         return redirect('departments');
     }

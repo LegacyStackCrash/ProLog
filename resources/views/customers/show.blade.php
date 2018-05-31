@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="row">
-        <div class="col s10 offset-s1">
+        <div class="col m12">
             <h3>{{ $customer->customer_name }}</h3>
 
             <h5>{{ $customer->customer_city }}, {{ $customer->customer_state }}</h5>

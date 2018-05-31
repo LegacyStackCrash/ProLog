@@ -29,6 +29,8 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/customers/{customer}', 'CustomersController@show');
 
     Route::get('/projects', 'ProjectsController@index');
+    Route::get('/projects/create', 'ProjectsController@create');
+    Route::post('/projects/create', 'ProjectsController@store');
 
     Route::get('/issues', 'IssuesController@index');
 

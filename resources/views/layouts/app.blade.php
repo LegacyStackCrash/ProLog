@@ -8,6 +8,7 @@
     <!-- CSS  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="/materialize/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="/datatables/datatables.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <body>
@@ -20,8 +21,11 @@
 
 <!--  Scripts-->
 <script src="/jquery/jquery.min.js"></script>
+<script src="/datatables/datatables.js"></script>
+<script src="/tinymce/tinymce.min.js"></script>
 <script src="/materialize/materialize.min.js"></script>
 <script src="/materialize/init.js"></script>
+<script src="/js/index.js"></script>
 
 </body>
 </html>

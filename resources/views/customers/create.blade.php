@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="row">
-        <div class="col s10 offset-s1">
+        <div class="col m12">
             <h3>New Customer</h3>
 
             <br/>

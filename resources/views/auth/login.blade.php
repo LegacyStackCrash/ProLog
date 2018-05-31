@@ -33,15 +33,13 @@
         <br/>
 
         <div>
-            <div class="col-md-8 offset-md-4">
-                <button type="submit" class="btn light-blue darken-2">
-                    {{ __('Login') }}
-                </button>
+            <button type="submit" class="btn light-blue darken-2">
+                {{ __('Login') }}
+            </button>
 
-                <a class="btn light-blue darken-2" href="{{ route('password.request') }}">
-                    {{ __('Forgot Password?') }}
-                </a>
-            </div>
+            <a class="btn light-blue darken-2" href="{{ route('password.request') }}">
+                {{ __('Forgot Password?') }}
+            </a>
         </div>
 
         <hr/>

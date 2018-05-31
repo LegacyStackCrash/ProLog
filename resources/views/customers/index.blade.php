@@ -3,12 +3,12 @@
 @section('content')
 
     <div class="row">
-        <div class="col s10 offset-s1">
-            <h3>Customers</h3>
+        <div class="col m12">
+            <h4>Customers</h4>
 
-            <a href="/customers/create" class="btn btn-link">New Customer</a>
+            <a href="/customers/create" class="btn btn-link light-blue darken-2">New Customer</a>
 
-            <table class="striped">
+            <table class="striped datatable">
                 <thead>
                 <tr>
                     <th>Customer Name</th>

@@ -3,15 +3,16 @@
 @section('content')
 
     <div class="row">
-        <div class="col s10 offset-s1">
-            <h3>Departments</h3>
+        <div class="col m12">
+            <h4>Departments</h4>
 
-            <a href="/departments/create" class="btn btn-link">New Department</a>
+            <a href="/departments/create" class="btn btn-link light-blue darken-2">New Department</a>
 
-            <table class="striped">
+            <table class="striped datatable">
                 <thead>
                 <tr>
-                    <th>Department Name</th>
+                    <th width="85%">Department Name</th>
+                    <th># Employees</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -28,6 +29,7 @@
 
                         <tr>
                             <td><a href="/departments/{{ $department->id }}">{{ $department->department_name }}</a></td>
+                            <td>0</td>
                         </tr>
 
                     @endforeach
