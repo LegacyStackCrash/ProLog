@@ -36,23 +36,33 @@ class ProjectsController extends Controller
         return view('projects.create', compact('departments', 'customers', 'users'));
     }
 
-    public function store()
+    public function store(Request $request)
     {
         $this->validate(request(), [
             'project_name' => 'required',
             'project_status' => 'required',
             'project_date' => 'required',
+            'customer_id' => 'required',
+            'department' => 'required',
+            'user' => 'required',
         ]);
 
-        Projects::create([
+        $project = Projects::create([
             'project_name' => request('project_name'),
             'project_status' => request('project_status'),
             'project_date' => request('project_date'),
             'project_completed_date' => request('project_completed_date'),
             'customer_id' => request('customer_id'),
             'project_details' => request('project_details'),
-
         ]);
+
+        foreach($request->department as $department_id=>$status){
+            $project->departments()->attach($department_id);
+        }
+
+        foreach($request->user as $user_id=>$status){
+            $project->users()->attach($user_id);
+        }
 
         return redirect('projects');
     }
