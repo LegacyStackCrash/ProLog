@@ -34,7 +34,7 @@
 
                             <div class="col m3 s12">
                                 <label>
-                                    <input type="checkbox" name="department[{{ $department->id }}]" id="department_{{ $department->id }}" >
+                                    <input type="checkbox" name="department[{{ $department->id }}]" id="department_{{ $department->id }}" {{ $user->departments->contains($department->id) ? 'checked' : '' }}>
                                     <span>{{ $department->department_name }}</span>
                                 </label>
                             </div>
