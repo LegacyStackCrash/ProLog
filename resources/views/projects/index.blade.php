@@ -42,10 +42,20 @@
 
                             <tr>
                                 <td><a href="/projects/{{ $project->id }}">{{ $project->project_name }}</a></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>{{ $project->project_date }}</td>
+                                <td>{{ $project->customer->customer_name }}</td>
+                                <td>
+                                    @foreach($project->departments as $department)
+                                        {{ $loop->first ? '' : ', ' }}
+                                        {{ $department->department_name }}
+                                    @endforeach
+                                </td>
+                                <td>
+                                    @foreach($project->users as $user)
+                                        {{ $loop->first ? '' : ', ' }}
+                                        {{ $user->name }}
+                                    @endforeach
+                                </td>
                             </tr>
 
                         @endforeach
@@ -81,10 +91,20 @@
 
                             <tr>
                                 <td><a href="/projects/{{ $project->id }}">{{ $project->project_name }}</a></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>{{ $project->project_date }}</td>
+                                <td>{{ $project->customer->customer_name }}</td>
+                                <td>
+                                    @foreach($project->departments as $department)
+                                        {{ $loop->first ? '' : ', ' }}
+                                        {{ $department->department_name }}
+                                    @endforeach
+                                </td>
+                                <td>
+                                    @foreach($project->users as $user)
+                                        {{ $loop->first ? '' : ', ' }}
+                                        {{ $user->name }}
+                                    @endforeach
+                                </td>
                             </tr>
 
                         @endforeach
@@ -120,10 +140,20 @@
 
                             <tr>
                                 <td><a href="/projects/{{ $project->id }}">{{ $project->project_name }}</a></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>{{ $project->project_date }}</td>
+                                <td>{{ $project->customer->customer_name }}</td>
+                                <td>
+                                    @foreach($project->departments as $department)
+                                        {{ $loop->first ? '' : ', ' }}
+                                        {{ $department->department_name }}
+                                    @endforeach
+                                </td>
+                                <td>
+                                    @foreach($project->users as $user)
+                                        {{ $loop->first ? '' : ', ' }}
+                                        {{ $user->name }}
+                                    @endforeach
+                                </td>
                             </tr>
 
                         @endforeach
@@ -159,10 +189,20 @@
 
                             <tr>
                                 <td><a href="/projects/{{ $project->id }}">{{ $project->project_name }}</a></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>{{ $project->project_date }}</td>
+                                <td>{{ $project->customer->customer_name }}</td>
+                                <td>
+                                    @foreach($project->departments as $department)
+                                        {{ $loop->first ? '' : ', ' }}
+                                        {{ $department->department_name }}
+                                    @endforeach
+                                </td>
+                                <td>
+                                    @foreach($project->users as $user)
+                                        {{ $loop->first ? '' : ', ' }}
+                                        {{ $user->name }}
+                                    @endforeach
+                                </td>
                             </tr>
 
                         @endforeach
