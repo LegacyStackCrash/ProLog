@@ -11,7 +11,14 @@ $(function(){
         $('.tabs').tabs();
         $('select').formSelect();
         $('.datepicker').datepicker({
-            'format': 'yyyy-mm-dd'
+            'format': 'yyyy-mm-dd',
+            'autoClose': true,
+            'showClearBtn': true
+        });
+        $('.timepicker').timepicker({
+            'twelveHour': false,
+            'autoClose': true,
+            'showClearBtn': true
         });
     });
 

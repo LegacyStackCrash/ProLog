@@ -16,11 +16,6 @@ class Projects extends Model
         return $this->belongsToMany('App\Departments')->withTimestamps();
     }
 
-    public function issues()
-    {
-        return $this->belongsToMany('App\Issues')->withTimestamps();
-    }
-
     public function users()
     {
         return $this->belongsToMany('App\User')->withTimestamps();

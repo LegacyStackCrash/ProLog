@@ -56,10 +56,12 @@ class ProjectsController extends Controller
             'project_details' => request('project_details'),
         ]);
 
+        //Pivot table relationship for selected departments to this project.
         foreach($request->department as $department_id=>$status){
             $project->departments()->attach($department_id);
         }
 
+        //Pivot table relationship for selected users to this project.
         foreach($request->user as $user_id=>$status){
             $project->users()->attach($user_id);
         }

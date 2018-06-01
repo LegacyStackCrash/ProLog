@@ -33,6 +33,8 @@ Route::group(['middleware' => 'auth'], function() {
     Route::post('/projects/create', 'ProjectsController@store');
 
     Route::get('/issues', 'IssuesController@index');
+    Route::get('/issues/create', 'IssuesController@create');
+    Route::post('/issues/create', 'IssuesController@store');
 
     Route::get('/logout', function(){
         auth()->logout();
