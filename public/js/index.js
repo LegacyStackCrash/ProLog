@@ -10,6 +10,7 @@ $(function(){
     $(document).ready(function(){
         $('.tabs').tabs();
         $('select').formSelect();
+        $(".dropdown-trigger").dropdown();
         $('.datepicker').datepicker({
             'format': 'yyyy-mm-dd',
             'autoClose': true,
