@@ -15,7 +15,9 @@
 
 @include('layouts.nav')
 
-@yield('content')
+<main>
+    @yield('content')
+</main>
 
 @include('layouts.footer')
 
