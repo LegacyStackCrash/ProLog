@@ -12,7 +12,7 @@
                 @csrf
 
                 <div class="input-field col m12 s12">
-                    <input type="text" id="project_name" name="project_name" maxlength="50">
+                    <input type="text" id="project_name" name="project_name" maxlength="50" value="{{ old('project_name') }}">
                     <label for="project_name">Project Name</label>
                 </div>
 
@@ -23,7 +23,7 @@
 
                             <div class="col m3 s12">
                                 <label>
-                                    <option value="{{ $customer->id }}">{{ $customer->customer_name }}</option>
+                                    <option value="{{ $customer->id }}" {{ old('customer_id') == $customer->id ? 'selected' : '' }}>{{ $customer->customer_name }}</option>
                                 </label>
                             </div>
 
@@ -33,21 +33,21 @@
                 </div>
 
                 <div class="input-field col m6 s12">
-                    <input type="text" class="datepicker" name="project_date" id="project_date">
+                    <input type="text" class="datepicker" name="project_date" id="project_date" value="{{ old('project_date') }}">
                     <label for="project_date">Project Date</label>
                 </div>
 
                 <div class="input-field col m6 s12">
-                    <input type="text" class="datepicker" name="project_completed_date" id="project_completed_date">
+                    <input type="text" class="datepicker" name="project_completed_date" id="project_completed_date"  value="{{ old('project_completed_date') }}">
                     <label for="project_completed_date">Completed Date</label>
                 </div>
 
                 <div class="input-field col m12 s12">
                     <select name="project_status">
                         <option value="" disabled selected>Choose a Status...</option>
-                        <option value="I">Incomplete</option>
-                        <option value="C">Complete</option>
-                        <option value="A">Archived</option>
+                        <option value="I" {{ old('issue_status') == 'I' ? 'selected' : '' }}>Incomplete</option>
+                        <option value="C" {{ old('issue_status') == 'C' ? 'selected' : '' }}>Complete</option>
+                        <option value="A" {{ old('issue_status') == 'A' ? 'selected' : '' }}>Archived</option>
                     </select>
                     <label>Project Status</label>
                 </div>
@@ -57,7 +57,7 @@
                 </div>
 
                 <div class="input-field col m12 s12">
-                    <textarea class="tinymce" name="project_details" id="project_details"></textarea>
+                    <textarea class="tinymce" name="project_details" id="project_details">{{ old('project_details') }}</textarea>
                 </div>
 
                 <div class="col m12 s12">
@@ -72,14 +72,13 @@
 
                             <div class="col m3 s12">
                                 <label>
-                                    <input type="checkbox" name="department[{{ $department->id }}]" id="department_{{ $department->id }}" >
+                                    <input type="checkbox" name="department[{{ $department->id }}]" id="department_{{ $department->id }}" {{ old('department.'.$department->id) ? 'checked' : '' }}>
                                     <span>{{ $department->department_name }}</span>
                                 </label>
                             </div>
 
                         @endforeach
                     @endif
-
                 </div>
 
                 <div class="col m12 s12">
@@ -94,7 +93,7 @@
 
                             <div class="col m3 s12">
                                 <label>
-                                    <input type="checkbox" name="user[{{ $user->id }}]" id="user_{{ $user->id }}" >
+                                    <input type="checkbox" name="user[{{ $user->id }}]" id="user_{{ $user->id }}" {{ old('user.'.$user->id) ? 'checked' : '' }}>
                                     <span>{{ $user->name }}</span>
                                 </label>
                             </div>

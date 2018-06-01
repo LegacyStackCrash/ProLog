@@ -61,13 +61,13 @@
                 </div>
 
                 <div class="input-field col m4 s12">
-                    <input type="text" class="datepicker" name="issue_date_completed" id="issue_date_completed" value="{{ old('issue_date_completed') }}">
-                    <label for="issue_date_completed">Completed Date</label>
+                    <input type="text" class="datepicker" name="issue_date_completed" id="issue_completed_date" value="{{ old('issue_completed_date') }}">
+                    <label for="issue_completed_date">Completed Date</label>
                 </div>
 
                 <div class="input-field col m2 s12">
-                    <input type="text" class="timepicker" name="issue_time_completed" id="issue_time_completed" value="{{ old('issue_time_completed') }}">
-                    <label for="issue_time_completed">Time</label>
+                    <input type="text" class="timepicker" name="issue_completed_time" id="issue_completed_time" value="{{ old('issue_completed_time') }}">
+                    <label for="issue_completed_time">Time</label>
                 </div>
 
                 <div class="col m12 s12">
@@ -101,7 +101,7 @@
 
                             <div class="col m3 s12">
                                 <label>
-                                    <input type="checkbox" name="department[{{ $department->id }}]" id="department_{{ $department->id }}" >
+                                    <input type="checkbox" name="department[{{ $department->id }}]" id="department_{{ $department->id }}" {{ old('department.'.$department->id) ? 'checked' : '' }}>
                                     <span>{{ $department->department_name }}</span>
                                 </label>
                             </div>
@@ -123,7 +123,7 @@
 
                             <div class="col m3 s12">
                                 <label>
-                                    <input type="checkbox" name="user[{{ $user->id }}]" id="user_{{ $user->id }}">
+                                    <input type="checkbox" name="user[{{ $user->id }}]" id="user_{{ $user->id }}" {{ old('user.'.$user->id) ? 'checked' : '' }}>
                                     <span>{{ $user->name }}</span>
                                 </label>
                             </div>

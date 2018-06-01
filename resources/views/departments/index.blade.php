@@ -29,7 +29,7 @@
 
                         <tr>
                             <td><a href="/departments/{{ $department->id }}">{{ $department->department_name }}</a></td>
-                            <td>0</td>
+                            <td>{{ count($department->users) }}</td>
                         </tr>
 
                     @endforeach

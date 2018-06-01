@@ -5,6 +5,7 @@
 
             @if (Auth::check())
                 <ul class="right hide-on-med-and-down">
+                    <li><a href="/users">Users</a></li>
                     <li><a href="/departments">Departments</a></li>
                     <li><a href="/customers">Customers</a></li>
                     <li><a href="/projects">Projects</a></li>
@@ -14,6 +15,7 @@
 
                 <ul id="nav-mobile" class="sidenav">
                     <li><a href="/home">Home</a></li>
+                    <li><a href="/users">Users</a></li>
                     <li><a href="/departments">Departments</a></li>
                     <li><a href="/customers">Customers</a></li>
                     <li><a href="/projects">Projects</a></li>
