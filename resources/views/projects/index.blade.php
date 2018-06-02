@@ -42,7 +42,7 @@
 
                             <tr>
                                 <td><a href="/projects/{{ $project->id }}">{{ $project->project_name }}</a></td>
-                                <td>{{ $project->project_date }}</td>
+                                <td>{{ $project->project_date->toDateString() }}</td>
                                 <td>{{ $project->customer->customer_name }}</td>
                                 <td>
                                     @foreach($project->departments as $department)
@@ -91,7 +91,7 @@
 
                             <tr>
                                 <td><a href="/projects/{{ $project->id }}">{{ $project->project_name }}</a></td>
-                                <td>{{ $project->project_date }}</td>
+                                <td>{{ $project->project_date->toDateString() }}</td>
                                 <td>{{ $project->customer->customer_name }}</td>
                                 <td>
                                     @foreach($project->departments as $department)
@@ -140,7 +140,7 @@
 
                             <tr>
                                 <td><a href="/projects/{{ $project->id }}">{{ $project->project_name }}</a></td>
-                                <td>{{ $project->project_date }}</td>
+                                <td>{{ $project->project_date->toDateString() }}</td>
                                 <td>{{ $project->customer->customer_name }}</td>
                                 <td>
                                     @foreach($project->departments as $department)
@@ -189,7 +189,7 @@
 
                             <tr>
                                 <td><a href="/projects/{{ $project->id }}">{{ $project->project_name }}</a></td>
-                                <td>{{ $project->project_date }}</td>
+                                <td>{{ $project->project_date->toDateString() }}</td>
                                 <td>{{ $project->customer->customer_name }}</td>
                                 <td>
                                     @foreach($project->departments as $department)

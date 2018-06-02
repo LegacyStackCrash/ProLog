@@ -18,7 +18,7 @@ class CreateProjectsTable extends Migration
             $table->integer('customer_id')->references('id')->on('customers');
             $table->string('project_name');
             $table->char('project_status', 1);
-            $table->text('project_details');
+            $table->text('project_details')->nullable();
             $table->date('project_date');
             $table->date('project_completed_date')->nullable();
             $table->timestamps();

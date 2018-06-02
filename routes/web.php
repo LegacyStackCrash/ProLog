@@ -39,10 +39,16 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/projects', 'ProjectsController@index');
     Route::get('/projects/create', 'ProjectsController@create');
     Route::post('/projects/create', 'ProjectsController@store');
+    Route::get('/projects/{project}', 'ProjectsController@show');
+    Route::get('/projects/edit/{user}', 'ProjectsController@edit');
+    Route::post('/projects/edit/{user}', 'ProjectsController@save');
 
     Route::get('/issues', 'IssuesController@index');
     Route::get('/issues/create', 'IssuesController@create');
     Route::post('/issues/create', 'IssuesController@store');
+    Route::get('/issues/{issue}', 'IssuesController@show');
+    Route::get('/issues/edit/{issue}', 'IssuesController@edit');
+    Route::post('/issues/edit/{issue}', 'IssuesController@save');
 
     Route::get('/logout', function(){
         auth()->logout();
