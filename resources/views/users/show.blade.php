@@ -44,13 +44,13 @@
                                 <td>{{ $project->project_date }}</td>
                                 <td>{{ $project->customer->customer_name }}</td>
                                 <td>
-                                    @foreach($issue->departments as $department)
+                                    @foreach($project->departments as $department)
                                         {{ $loop->first ? '' : ', ' }}
                                         {{ $department->department_name }}
                                     @endforeach
                                 </td>
                                 <td>
-                                    @foreach($issue->users as $user)
+                                    @foreach($project->users as $user)
                                         {{ $loop->first ? '' : ', ' }}
                                         {{ $user->name }}
                                     @endforeach
