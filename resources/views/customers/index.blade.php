@@ -11,9 +11,10 @@
             <table class="striped">
                 <thead>
                 <tr>
-                    <th>Customer Name</th>
-                    <th>Customer City</th>
-                    <th>Customer State</th>
+                    <th>Name</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Phone</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -32,6 +33,7 @@
                             <td><a href="customers/{{ $customer->id }}">{{ $customer->customer_name }}</a></td>
                             <td><a href="customers/{{ $customer->id }}">{{ $customer->customer_city }}</a></td>
                             <td><a href="customers/{{ $customer->id }}">{{ $customer->customer_state }}</a></td>
+                            <td><a href="customers/{{ $customer->id }}">{{ $customer->customer_phone }}</a></td>
                         </tr>
 
                     @endforeach
