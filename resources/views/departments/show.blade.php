@@ -55,16 +55,20 @@
                                     @endif
                                 </td>
                                 <td>
+                                    <a href="/projects/{{ $project->id }}">
                                     @foreach($project->departments as $department)
                                         {{ $loop->first ? '' : ', ' }}
-                                        <a href="/projects/{{ $project->id }}">{{ $department->department_name }}</a>
+                                        {{ $department->department_name }}
                                     @endforeach
+                                    </a>
                                 </td>
                                 <td>
+                                    <a href="/projects/{{ $project->id }}">
                                     @foreach($project->users as $user)
                                         {{ $loop->first ? '' : ', ' }}
-                                        <a href="/projects/{{ $project->id }}">{{ $user->name }}</a>
+                                        {{ $user->name }}
                                     @endforeach
+                                    </a>
                                 </td>
                             </tr>
 
@@ -110,16 +114,20 @@
                                     @endif
                                 </td>
                                 <td>
+                                    <a href="/issues/{{ $issue->id }}">
                                     @foreach($issue->departments as $department)
                                         {{ $loop->first ? '' : ', ' }}
-                                        <a href="/issues/{{ $issue->id }}">{{ $department->department_name }}</a>
+                                        {{ $department->department_name }}
                                     @endforeach
+                                    </a>
                                 </td>
                                 <td>
+                                    <a href="/issues/{{ $issue->id }}">
                                     @foreach($issue->users as $user)
                                         {{ $loop->first ? '' : ', ' }}
-                                        <a href="/issues/{{ $issue->id }}">{{ $user->name }}</a>
+                                        {{ $user->name }}
                                     @endforeach
+                                    </a>
                                 </td>
                             </tr>
 
