@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class SoftDeletesIssues extends Migration
+class ForeignKeyProjects extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class SoftDeletesIssues extends Migration
      */
     public function up()
     {
-        Schema::table('issues', function ($table) {
-            $table->softDeletes();
+        Schema::table('projects', function ($table) {
+            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
         });
     }
 
@@ -25,6 +25,6 @@ class SoftDeletesIssues extends Migration
      */
     public function down()
     {
-
+        //
     }
 }

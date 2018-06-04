@@ -25,6 +25,6 @@ class SoftDeletesProjects extends Migration
      */
     public function down()
     {
-        //
+
     }
 }

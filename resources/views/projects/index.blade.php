@@ -42,18 +42,18 @@
 
                             <tr>
                                 <td><a href="/projects/{{ $project->id }}">{{ $project->project_name }}</a></td>
-                                <td><a href="/projects/{{ $project->id }}">{{ $project->project_date->toDateString() }}</a></td>
-                                <td><a href="/projects/{{ $project->id }}">{{ $project->customer->customer_name }}</a></td>
+                                <td>{{ $project->project_date->toDateString() }}</td>
+                                <td>{{ $project->customer->customer_name }}</td>
                                 <td>
                                     @foreach($project->departments as $department)
                                         {{ $loop->first ? '' : ', ' }}
-                                        <a href="/projects/{{ $project->id }}">{{ $department->department_name }}</a>
+                                        {{ $department->department_name }}
                                     @endforeach
                                 </td>
                                 <td>
                                     @foreach($project->users as $user)
                                         {{ $loop->first ? '' : ', ' }}
-                                        <a href="/projects/{{ $project->id }}">{{ $user->name }}</a>
+                                        {{ $user->name }}
                                     @endforeach
                                 </td>
                             </tr>
@@ -91,18 +91,18 @@
 
                             <tr>
                                 <td><a href="/projects/{{ $project->id }}">{{ $project->project_name }}</a></td>
-                                <td><a href="/projects/{{ $project->id }}">{{ $project->project_date->toDateString() }}</a></td>
-                                <td><a href="/projects/{{ $project->id }}">{{ $project->customer->customer_name }}</a></td>
+                                <td>{{ $project->project_date->toDateString() }}</td>
+                                <td>{{ $project->customer->customer_name }}</td>
                                 <td>
                                     @foreach($project->departments as $department)
                                         {{ $loop->first ? '' : ', ' }}
-                                        <a href="/projects/{{ $project->id }}">{{ $department->department_name }}</a>
+                                        {{ $department->department_name }}
                                     @endforeach
                                 </td>
                                 <td>
                                     @foreach($project->users as $user)
                                         {{ $loop->first ? '' : ', ' }}
-                                        <a href="/projects/{{ $project->id }}">{{ $user->name }}</a>
+                                        {{ $user->name }}
                                     @endforeach
                                 </td>
                             </tr>
@@ -140,18 +140,18 @@
 
                             <tr>
                                 <td><a href="/projects/{{ $project->id }}">{{ $project->project_name }}</a></td>
-                                <td><a href="/projects/{{ $project->id }}">{{ $project->project_date->toDateString() }}</a></td>
-                                <td><a href="/projects/{{ $project->id }}">{{ $project->customer->customer_name }}</a></td>
+                                <td>{{ $project->project_date->toDateString() }}</td>
+                                <td>{{ $project->customer->customer_name }}</td>
                                 <td>
                                     @foreach($project->departments as $department)
                                         {{ $loop->first ? '' : ', ' }}
-                                        <a href="/projects/{{ $project->id }}">{{ $department->department_name }}</a>
+                                        {{ $department->department_name }}
                                     @endforeach
                                 </td>
                                 <td>
                                     @foreach($project->users as $user)
                                         {{ $loop->first ? '' : ', ' }}
-                                        <a href="/projects/{{ $project->id }}">{{ $user->name }}</a>
+                                        {{ $user->name }}
                                     @endforeach
                                 </td>
                             </tr>
@@ -189,18 +189,18 @@
 
                             <tr>
                                 <td><a href="/projects/{{ $project->id }}">{{ $project->project_name }}</a></td>
-                                <td><a href="/projects/{{ $project->id }}">{{ $project->project_date->toDateString() }}</a></td>
-                                <td><a href="/projects/{{ $project->id }}">{{ $project->customer->customer_name }}</a></td>
+                                <td>{{ $project->project_date->toDateString() }}</td>
+                                <td>{{ $project->customer->customer_name }}</td>
                                 <td>
                                     @foreach($project->departments as $department)
                                         {{ $loop->first ? '' : ', ' }}
-                                        <a href="/projects/{{ $project->id }}">{{ $department->department_name }}</a>
+                                        {{ $department->department_name }}
                                     @endforeach
                                 </td>
                                 <td>
                                     @foreach($project->users as $user)
                                         {{ $loop->first ? '' : ', ' }}
-                                        <a href="/projects/{{ $project->id }}">{{ $user->name }}</a>
+                                        {{ $user->name }}
                                     @endforeach
                                 </td>
                             </tr>

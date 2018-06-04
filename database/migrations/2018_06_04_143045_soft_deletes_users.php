@@ -25,6 +25,6 @@ class SoftDeletesUsers extends Migration
      */
     public function down()
     {
-        //
+
     }
 }
