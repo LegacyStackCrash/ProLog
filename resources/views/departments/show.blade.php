@@ -6,9 +6,14 @@
         <div class="col m12 s12">
             <h3>{{ $department->department_name }}</h3>
 
-            <a href="/departments/edit/{{ $department->id }}" class="btn btn-link light-blue darken-2">Edit Department</a>
-        </div>
+            <form method="POST" action="/departments/delete/{{ $department->id }}">
+                @csrf
 
+                <a href="/departments/edit/{{ $department->id }}" class="btn btn-link light-blue darken-2">Edit Department</a>
+
+                <button class="btn btn-link red accent-2" data-confirm="Are you sure you want to delete this department?">Delete Department</button>
+            </form>
+        </div>
 
         <div class="input-field col m12 s12">
             <ul class="tabs">

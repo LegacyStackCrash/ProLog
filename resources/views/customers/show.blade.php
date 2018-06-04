@@ -6,7 +6,13 @@
         <div class="col m12 s12">
             <h3>{{ $customer->customer_name }}</h3>
 
-            <a href="/customers/edit/{{ $customer->id }}" class="btn btn-link light-blue darken-2">Edit Customer</a>
+            <form method="POST" action="/customers/delete/{{ $customer->id }}">
+                @csrf
+
+                <a href="/customers/edit/{{ $customer->id }}" class="btn btn-link light-blue darken-2">Edit Customer</a>
+
+                <button class="btn btn-link red accent-2" data-confirm="Are you sure you want to delete this customer?">Delete Customer</button>
+            </form>
         </div>
 
 

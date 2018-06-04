@@ -25,23 +25,31 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/users/{user}', 'UserController@show');
     Route::get('/users/edit/{user}', 'UserController@edit');
     Route::post('/users/edit/{user}', 'UserController@save');
+    Route::post('/users/delete/{user}', 'UserController@destroy');
 
     Route::get('/departments', 'DepartmentsController@index');
     Route::get('/departments/create', 'DepartmentsController@create');
     Route::post('/departments/create', 'DepartmentsController@store');
     Route::get('/departments/{department}', 'DepartmentsController@show');
+    Route::get('/departments/edit/{department}', 'DepartmentsController@edit');
+    Route::post('/departments/edit/{department}', 'DepartmentsController@save');
+    Route::post('/departments/delete/{department}', 'DepartmentsController@destroy');
 
     Route::get('/customers', 'CustomersController@index');
     Route::get('/customers/create', 'CustomersController@create');
     Route::post('/customers/create', 'CustomersController@store');
     Route::get('/customers/{customer}', 'CustomersController@show');
+    Route::get('/customers/edit/{customer}', 'CustomersController@edit');
+    Route::post('/customers/edit/{customer}', 'CustomersController@save');
+    Route::post('/customers/delete/{customer}', 'CustomersController@destroy');
 
     Route::get('/projects', 'ProjectsController@index');
     Route::get('/projects/create', 'ProjectsController@create');
     Route::post('/projects/create', 'ProjectsController@store');
     Route::get('/projects/{project}', 'ProjectsController@show');
-    Route::get('/projects/edit/{user}', 'ProjectsController@edit');
-    Route::post('/projects/edit/{user}', 'ProjectsController@save');
+    Route::get('/projects/edit/{project}', 'ProjectsController@edit');
+    Route::post('/projects/edit/{project}', 'ProjectsController@save');
+    Route::post('/projects/delete/{project}', 'ProjectsController@destroy');
 
     Route::get('/issues', 'IssuesController@index');
     Route::get('/issues/create', 'IssuesController@create');
@@ -49,6 +57,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/issues/{issue}', 'IssuesController@show');
     Route::get('/issues/edit/{issue}', 'IssuesController@edit');
     Route::post('/issues/edit/{issue}', 'IssuesController@save');
+    Route::post('/issues/delete/{issue}', 'IssuesController@destroy');
 
     Route::get('/logout', function(){
         auth()->logout();

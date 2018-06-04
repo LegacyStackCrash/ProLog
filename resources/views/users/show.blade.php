@@ -5,9 +5,13 @@
     <div class="row">
         <div class="col m12 s12">
             <h3>{{ $user->name }}</h3>
+            <form method="POST" action="/users/delete/{{ $user->id }}">
+                @csrf
 
-            <a href="/users/edit/{{ $user->id }}" class="btn btn-link light-blue darken-2">Edit User</a>
+                <a href="/users/edit/{{ $user->id }}" class="btn btn-link light-blue darken-2">Edit User</a>
 
+                <button class="btn btn-link red accent-2" data-confirm="Are you sure you want to delete this user?">Delete User</button>
+            </form>
         </div>
 
         <div class="input-field col m12 s12">

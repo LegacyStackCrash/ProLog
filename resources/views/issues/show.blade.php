@@ -8,7 +8,13 @@
         <div class="col m12 s12">
             <h3>{{ $issue->issue_name }}</h3>
 
-            <a href="/issues/edit/{{ $issue->id }}" class="btn btn-link light-blue darken-2">Edit Issue</a>
+            <form method="POST" action="/issues/delete/{{ $issue->id }}">
+                @csrf
+
+                <a href="/issues/edit/{{ $issue->id }}" class="btn btn-link light-blue darken-2">Edit Issue</a>
+
+                <button class="btn btn-link red accent-2" data-confirm="Are you sure you want to delete this project?">Delete Issue</button>
+            </form>
         </div>
     </div>
 

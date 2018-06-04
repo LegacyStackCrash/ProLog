@@ -42,8 +42,8 @@
 
                             <tr>
                                 <td><a href="/projects/{{ $project->id }}">{{ $project->project_name }}</a></td>
-                                <td><a href="/projects/{{ $project->id }}">{{ $project->project_date->toDateString() }}</td>
-                                <td><a href="/projects/{{ $project->id }}">{{ $project->customer->customer_name }}</td>
+                                <td><a href="/projects/{{ $project->id }}">{{ $project->project_date->toDateString() }}</a></td>
+                                <td><a href="/projects/{{ $project->id }}">{{ $project->customer->customer_name }}</a></td>
                                 <td>
                                     @foreach($project->departments as $department)
                                         {{ $loop->first ? '' : ', ' }}
@@ -189,7 +189,7 @@
 
                             <tr>
                                 <td><a href="/projects/{{ $project->id }}">{{ $project->project_name }}</a></td>
-                                <td><a href="/projects/{{ $project->id }}">{{ $project->project_date->toDateString() }}</td>
+                                <td><a href="/projects/{{ $project->id }}">{{ $project->project_date->toDateString() }}</a></td>
                                 <td><a href="/projects/{{ $project->id }}">{{ $project->customer->customer_name }}</a></td>
                                 <td>
                                     @foreach($project->departments as $department)

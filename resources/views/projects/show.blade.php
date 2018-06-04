@@ -8,7 +8,13 @@
         <div class="col m12 s12">
             <h3>{{ $project->project_name }}</h3>
 
-            <a href="/projects/edit/{{ $project->id }}" class="btn btn-link light-blue darken-2">Edit Project</a>
+            <form method="POST" action="/projects/delete/{{ $project->id }}">
+                @csrf
+
+                <a href="/projects/edit/{{ $project->id }}" class="btn btn-link light-blue darken-2">Edit Project</a>
+
+                <button class="btn btn-link red accent-2" data-confirm="Are you sure you want to delete this project?">Delete Project</button>
+            </form>
         </div>
     </div>
 
@@ -27,7 +33,7 @@
 
         <div class="row">
             <div class="col m12 s12">
-                {{ $project->project_details }}
+                {!!  $project->project_details  !!}
             </div>
         </div>
     @endif

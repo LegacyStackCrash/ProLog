@@ -21,6 +21,18 @@ $(function(){
             'autoClose': true,
             'showClearBtn': true
         });
+
+        //Confirm dialog message
+        $('[data-confirm]').on('click', function(e){
+            e.preventDefault();
+            e.stopPropagation();
+
+            var message = $(this).data('confirm');
+
+            if(confirm(message)){
+                $(this).closest('form').submit();
+            }
+        })
     });
 
     $('.datatable').DataTable({
