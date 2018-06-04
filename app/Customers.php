@@ -17,7 +17,7 @@ class Customers extends Model
      */
     protected $dates = ['deleted_at'];
 
-    public $fillable = ['customer_name', 'customer_city', 'customer_state'];
+    public $fillable = ['customer_name', 'customer_city', 'customer_state', 'customer_phone'];
 
     public function projects()
     {
