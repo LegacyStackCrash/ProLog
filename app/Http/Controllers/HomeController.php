@@ -21,9 +21,9 @@ class HomeController extends Controller
 
     public function show()
     {
-        $issues = Issues::latest()->limit(15)->get();
-        $projects = Projects::latest()->limit(15)->get();
+        $projects_incomplete = Projects::where('project_status', 'I')->orderBy('project_date', 'desc')->get();
+        $issues_incomplete = Issues::where('issue_status', 'I')->orderBy('issue_date_time', 'desc')->get();
 
-        return view('home');
+        return view('home', compact(['projects_incomplete', 'issues_incomplete']));
     }
 }

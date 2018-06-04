@@ -2,57 +2,144 @@
 
 @section('content')
 
-<div class="section no-pad-bot" id="index-banner">
-    <div class="container">
-        <br><br>
-        <h1 class="header center orange-text">Starter Template</h1>
-        <div class="row center">
-            <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-        </div>
-        <div class="row center">
-            <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange">Get Started</a>
-        </div>
-        <br><br>
+    <div class="row">
+        <div class="col m12 s12">
 
+            @include('layouts.messages')
+
+            <h4>Dashboard</h4>
+
+            <a href="/issues/create" class="btn btn-link light-blue darken-2">New Issue</a>
+            <a href="/projects/create" class="btn btn-link light-blue darken-2">New Project</a>
+
+            <br/>
+            <br/>
+
+
+            <ul class="tabs">
+                <li class="tab col m6 s6"><a href="#incomplete_issues">Incomplete Issues</a></li>
+                <li class="tab col m6 s6"><a href="#incomplete_projects">Incomplete Projects</a></li>
+            </ul>
+
+            <div id="incomplete_issues">
+                <table class="striped datatable">
+                    <thead>
+                    <tr>
+                        <th>Issue Name</th>
+                        <th>Date/Time</th>
+                        <th>Customer</th>
+                        <th>Department(s)</th>
+                        <th>User(s)</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    @if($issues_incomplete->isEmpty())
+
+                        <tr>
+                            <td colspan="5">Sorry, there are currently no issues.</td>
+                        </tr>
+
+                    @else
+
+                        @foreach($issues_incomplete as $issue)
+
+                            <tr>
+                                <td><a href="/issues/{{ $issue->id }}">{{ $issue->issue_name }}</a></td>
+                                <td><a href="/issues/{{ $issue->id }}">{{ $issue->issue_date_time }}</td>
+                                <td>
+                                    @if($issue->customer)
+                                        <a href="/issues/{{ $issue->id }}">
+                                            {{ $issue->customer->customer_name }}
+                                        </a>
+                                    @endif
+                                </td>
+                                <td>
+                                    <a href="/issues/{{ $issue->id }}">
+                                        @foreach($issue->departments as $department)
+                                            {{ $loop->first ? '' : ', ' }}
+                                            {{ $department->department_name }}
+                                        @endforeach
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="/issues/{{ $issue->id }}">
+                                        @foreach($issue->users as $user)
+                                            {{ $loop->first ? '' : ', ' }}
+                                            {{ $user->name }}
+                                        @endforeach
+                                    </a>
+                                </td>
+                            </tr>
+
+                        @endforeach
+
+                    @endif
+
+                    </tbody>
+                </table>
+            </div>
+
+
+            <div id="incomplete_projects">
+                <table class="striped datatable">
+                    <thead>
+                    <tr>
+                        <th>Project Name</th>
+                        <th>Date</th>
+                        <th>Customer</th>
+                        <th>Department(s)</th>
+                        <th>User(s)</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    @if($projects_incomplete->isEmpty())
+
+                        <tr>
+                            <td colspan="5">Sorry, there are currently no projects.</td>
+                        </tr>
+
+                    @else
+
+                        @foreach($projects_incomplete as $project)
+
+                            <tr>
+                                <td><a href="/projects/{{ $project->id }}">{{ $project->project_name }}</a></td>
+                                <td><a href="/projects/{{ $project->id }}">{{ $project->project_date->toDateString() }}</a></td>
+                                <td>
+                                    @if($project->customer)
+                                        <a href="/projects/{{ $project->id }}">
+                                            {{ $project->customer->customer_name }}
+                                        </a>
+                                    @endif
+                                </td>
+                                <td>
+                                    <a href="/projects/{{ $project->id }}">
+                                        @foreach($project->departments as $department)
+                                            {{ $loop->first ? '' : ', ' }}
+                                            {{ $department->department_name }}
+                                        @endforeach
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="/projects/{{ $project->id }}">
+                                        @foreach($project->users as $user)
+                                            {{ $loop->first ? '' : ', ' }}
+                                            {{ $user->name }}
+                                        @endforeach
+                                    </a>
+                                </td>
+                            </tr>
+
+                        @endforeach
+
+                    @endif
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
-</div>
-
-
-<div class="container">
-    <div class="section">
-
-        <!--   Icon Section   -->
-        <div class="row">
-            <div class="col s12 m4">
-                <div class="icon-block">
-                    <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
-                    <h5 class="center">Speeds up development</h5>
-
-                    <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
-                </div>
-            </div>
-
-            <div class="col s12 m4">
-                <div class="icon-block">
-                    <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
-                    <h5 class="center">User Experience Focused</h5>
-
-                    <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
-                </div>
-            </div>
-
-            <div class="col s12 m4">
-                <div class="icon-block">
-                    <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
-                    <h5 class="center">Easy to work with</h5>
-
-                    <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
-                </div>
-            </div>
-        </div>
-
-    </div>
-    <br><br>
-</div>
 
 @endsection
