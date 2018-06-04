@@ -12,7 +12,7 @@ class Projects extends Model
     public $fillable = ['project_name', 'customer_id', 'project_status', 'project_date',
         'project_completed_date', 'project_details', 'department', 'user'];
 
-    protected $dates = ['project_date', 'project_completed_date', 'deleted_at'];
+    protected $dates = ['project_date', 'project_date_completed', 'deleted_at'];
 
     public function departments()
     {

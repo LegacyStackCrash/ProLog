@@ -38,16 +38,16 @@
                 </div>
 
                 <div class="input-field col m6 s12">
-                    <input type="text" class="datepicker" name="project_completed_date" id="project_completed_date"  value="{{ old('project_completed_date') }}">
-                    <label for="project_completed_date">Completed Date</label>
+                    <input type="text" class="datepicker" name="project_date_completed" id="project_date_completed"  value="{{ old('project_date_completed') }}">
+                    <label for="project_date_completed">Completed Date</label>
                 </div>
 
                 <div class="input-field col m12 s12">
                     <select name="project_status">
                         <option value="" disabled selected>Choose a Status...</option>
-                        <option value="I" {{ old('issue_status') == 'I' ? 'selected' : '' }}>Incomplete</option>
-                        <option value="C" {{ old('issue_status') == 'C' ? 'selected' : '' }}>Complete</option>
-                        <option value="A" {{ old('issue_status') == 'A' ? 'selected' : '' }}>Archived</option>
+                        <option value="I" {{ old('project_status') == 'I' ? 'selected' : '' }}>Incomplete</option>
+                        <option value="C" {{ old('project_status') == 'C' ? 'selected' : '' }}>Complete</option>
+                        <option value="A" {{ old('project_status') == 'A' ? 'selected' : '' }}>Archived</option>
                     </select>
                     <label>Project Status</label>
                 </div>

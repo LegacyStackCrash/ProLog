@@ -4,6 +4,8 @@
 
     <div class="row">
         <div class="col m12 s12">
+            @include('layouts.messages')
+
             <h4>Issues</h4>
 
             <a href="/issues/create" class="btn btn-link light-blue darken-2">New Issue</a>

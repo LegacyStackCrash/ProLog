@@ -13,7 +13,7 @@
                 {{ csrf_field() }}
 
                 <div class="input-field col m12 s12">
-                    <input type="text" id="department_name" name="department_name" maxlength="50">
+                    <input type="text" id="department_name" name="department_name" maxlength="50"  value="{{ old('department_name') }}">
                     <label for="department_name">Department Name</label>
                 </div>
 

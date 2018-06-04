@@ -20,7 +20,7 @@ class CreateProjectsTable extends Migration
             $table->char('project_status', 1);
             $table->text('project_details')->nullable();
             $table->date('project_date');
-            $table->date('project_completed_date')->nullable();
+            $table->date('project_date_completed')->nullable();
             $table->timestamps();
         });
     }

@@ -19,21 +19,3 @@ $factory->define(App\Issues::class, function (Faker $faker) {
         'issue_duration_minutes' => 0,
     ];
 });
-
-/*
-foreach(range(1, 300) as $index)
-{
-    DB::table('departments_issues')->insert([
-        'issues_id' => rand(1,150),
-        'departments_id' => rand(1,8),
-    ]);
-}
-
-foreach(range(1, 300) as $index)
-{
-    DB::table('issues_user')->insert([
-        'issues_id' => rand(1,150),
-        'user_id' => rand(1,15),
-    ]);
-}
-*/

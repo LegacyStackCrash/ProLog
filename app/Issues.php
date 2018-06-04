@@ -14,7 +14,7 @@ class Issues extends Model
         'issue_date_completed', 'issue_time_completed', 'issue_date_time_completed',
         'issue_duration_days', 'issue_duration_hours', 'issue_duration_minutes'];
 
-    protected $dates = ['issue_date_time', 'issue_completed_date_time', 'deleted_at'];
+    protected $dates = ['issue_date_time', 'issue_date_time_completed', 'deleted_at'];
 
     public function departments()
     {

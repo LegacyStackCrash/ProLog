@@ -12,18 +12,23 @@
                 @csrf
 
                 <div class="input-field col m12 s12">
-                    <input type="text" id="customer_name" name="customer_name" maxlength="50">
+                    <input type="text" id="customer_name" name="customer_name" maxlength="50" value="{{ old('customer_name') }}">
                     <label for="customer_name">Customer Name</label>
                 </div>
 
                 <div class="input-field col m12 s12">
-                    <input type="text" id="customer_city" name="customer_city" maxlength="30">
+                    <input type="text" id="customer_city" name="customer_city" maxlength="30" value="{{ old('customer_city') }}">
                     <label for="customer_city">Customer City</label>
                 </div>
 
                 <div class="input-field col m12 s12">
-                    <input type="text" id="customer_state" name="customer_state" maxlength="2">
+                    <input type="text" id="customer_state" name="customer_state" maxlength="2" value="{{ old('customer_state') }}">
                     <label for="customer_state">Customer State</label>
+                </div>
+
+                <div class="input-field col m12 s12">
+                    <input type="text" id="customer_phone" name="customer_phone" value="{{ old('customer_phone') }}">
+                    <label for="customer_phone">Customer Phone</label>
                 </div>
 
                 <div class="col m12 s12">
