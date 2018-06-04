@@ -42,18 +42,24 @@
 
                             <tr>
                                 <td><a href="/projects/{{ $project->id }}">{{ $project->project_name }}</a></td>
-                                <td>{{ $project->project_date->toDateString() }}</td>
-                                <td>{{ $project->customer->customer_name }}</td>
+                                <td><a href="/projects/{{ $project->id }}">{{ $project->project_date->toDateString() }}</a></td>
+                                <td>
+                                    @if($project->customer)
+                                        <a href="/projects/{{ $project->id }}">
+                                            {{ $project->customer->customer_name }}
+                                        </a>
+                                    @endif
+                                </td>
                                 <td>
                                     @foreach($project->departments as $department)
                                         {{ $loop->first ? '' : ', ' }}
-                                        {{ $department->department_name }}
+                                        <a href="/projects/{{ $project->id }}">{{ $department->department_name }}</a>
                                     @endforeach
                                 </td>
                                 <td>
                                     @foreach($project->users as $user)
                                         {{ $loop->first ? '' : ', ' }}
-                                        {{ $user->name }}
+                                        <a href="/projects/{{ $project->id }}">{{ $user->name }}</a>
                                     @endforeach
                                 </td>
                             </tr>
@@ -91,18 +97,24 @@
 
                             <tr>
                                 <td><a href="/projects/{{ $project->id }}">{{ $project->project_name }}</a></td>
-                                <td>{{ $project->project_date->toDateString() }}</td>
-                                <td>{{ $project->customer->customer_name }}</td>
+                                <td><a href="/projects/{{ $project->id }}">{{ $project->project_date->toDateString() }}</a></td>
+                                <td>
+                                    @if($project->customer)
+                                        <a href="/projects/{{ $project->id }}">
+                                            {{ $project->customer->customer_name }}
+                                        </a>
+                                    @endif
+                                </td>
                                 <td>
                                     @foreach($project->departments as $department)
                                         {{ $loop->first ? '' : ', ' }}
-                                        {{ $department->department_name }}
+                                        <a href="/projects/{{ $project->id }}">{{ $department->department_name }}</a>
                                     @endforeach
                                 </td>
                                 <td>
                                     @foreach($project->users as $user)
                                         {{ $loop->first ? '' : ', ' }}
-                                        {{ $user->name }}
+                                        <a href="/projects/{{ $project->id }}">{{ $user->name }}</a>
                                     @endforeach
                                 </td>
                             </tr>
@@ -140,18 +152,24 @@
 
                             <tr>
                                 <td><a href="/projects/{{ $project->id }}">{{ $project->project_name }}</a></td>
-                                <td>{{ $project->project_date->toDateString() }}</td>
-                                <td>{{ $project->customer->customer_name }}</td>
+                                <td><a href="/projects/{{ $project->id }}">{{ $project->project_date->toDateString() }}</a></td>
+                                <td>
+                                    @if($project->customer)
+                                        <a href="/projects/{{ $project->id }}">
+                                            {{ $project->customer->customer_name }}
+                                        </a>
+                                    @endif
+                                </td>
                                 <td>
                                     @foreach($project->departments as $department)
                                         {{ $loop->first ? '' : ', ' }}
-                                        {{ $department->department_name }}
+                                        <a href="/projects/{{ $project->id }}">{{ $department->department_name }}</a>
                                     @endforeach
                                 </td>
                                 <td>
                                     @foreach($project->users as $user)
                                         {{ $loop->first ? '' : ', ' }}
-                                        {{ $user->name }}
+                                        <a href="/projects/{{ $project->id }}">{{ $user->name }}</a>
                                     @endforeach
                                 </td>
                             </tr>
@@ -189,18 +207,24 @@
 
                             <tr>
                                 <td><a href="/projects/{{ $project->id }}">{{ $project->project_name }}</a></td>
-                                <td>{{ $project->project_date->toDateString() }}</td>
-                                <td>{{ $project->customer->customer_name }}</td>
+                                <td><a href="/projects/{{ $project->id }}">{{ $project->project_date->toDateString() }}</a></td>
+                                <td>
+                                    @if($project->customer)
+                                        <a href="/projects/{{ $project->id }}">
+                                            {{ $project->customer->customer_name }}
+                                        </a>
+                                    @endif
+                                </td>
                                 <td>
                                     @foreach($project->departments as $department)
                                         {{ $loop->first ? '' : ', ' }}
-                                        {{ $department->department_name }}
+                                        <a href="/projects/{{ $project->id }}">{{ $department->department_name }}</a>
                                     @endforeach
                                 </td>
                                 <td>
                                     @foreach($project->users as $user)
                                         {{ $loop->first ? '' : ', ' }}
-                                        {{ $user->name }}
+                                        <a href="/projects/{{ $project->id }}">{{ $user->name }}</a>
                                     @endforeach
                                 </td>
                             </tr>

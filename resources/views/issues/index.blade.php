@@ -42,8 +42,14 @@
 
                             <tr>
                                 <td><a href="/issues/{{ $issue->id }}">{{ $issue->issue_name }}</a></td>
-                                <td><a href="/issues/{{ $issue->id }}">{{ $issue->issue_date_time }}</a></td>
-                                <td><a href="/issues/{{ $issue->id }}">{{ $issue->customer->customer_name }}</a></td>
+                                <td><a href="/issues/{{ $issue->id }}">{{ $issue->issue_date_time }}</td>
+                                <td>
+                                    @if($issue->customer)
+                                        <a href="/issues/{{ $issue->id }}">
+                                            {{ $issue->customer->customer_name }}
+                                        </a>
+                                    @endif
+                                </td>
                                 <td>
                                     @foreach($issue->departments as $department)
                                         {{ $loop->first ? '' : ', ' }}
@@ -92,7 +98,13 @@
                             <tr>
                                 <td><a href="/issues/{{ $issue->id }}">{{ $issue->issue_name }}</a></td>
                                 <td><a href="/issues/{{ $issue->id }}">{{ $issue->issue_date_time }}</a></td>
-                                <td><a href="/issues/{{ $issue->id }}">{{ $issue->customer->customer_name }}</a></td>
+                                <td>
+                                    @if($issue->customer)
+                                        <a href="/issues/{{ $issue->id }}">
+                                            {{ $issue->customer->customer_name }}
+                                        </a>
+                                    @endif
+                                </td>
                                 <td>
                                     @foreach($issue->departments as $department)
                                         {{ $loop->first ? '' : ', ' }}
@@ -141,7 +153,13 @@
                             <tr>
                                 <td><a href="/issues/{{ $issue->id }}">{{ $issue->issue_name }}</a></td>
                                 <td><a href="/issues/{{ $issue->id }}">{{ $issue->issue_date_time }}</a></td>
-                                <td><a href="/issues/{{ $issue->id }}">{{ $issue->customer->customer_name }}</a></td>
+                                <td>
+                                    @if($issue->customer)
+                                        <a href="/issues/{{ $issue->id }}">
+                                            {{ $issue->customer->customer_name }}
+                                        </a>
+                                    @endif
+                                </td>
                                 <td>
                                     @foreach($issue->departments as $department)
                                         {{ $loop->first ? '' : ', ' }}
@@ -190,7 +208,13 @@
                             <tr>
                                 <td><a href="/issues/{{ $issue->id }}">{{ $issue->issue_name }}</a></td>
                                 <td><a href="/issues/{{ $issue->id }}">{{ $issue->issue_date_time }}</a></td>
-                                <td><a href="/issues/{{ $issue->id }}">{{ $issue->customer->customer_name }}</a></td>
+                                <td>
+                                    @if($issue->customer)
+                                        <a href="/issues/{{ $issue->id }}">
+                                            {{ $issue->customer->customer_name }}
+                                        </a>
+                                    @endif
+                                </td>
                                 <td>
                                     @foreach($issue->departments as $department)
                                         {{ $loop->first ? '' : ', ' }}
