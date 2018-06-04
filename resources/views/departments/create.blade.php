@@ -9,8 +9,7 @@
             @include('layouts.errors')
 
             <form method="POST" action="/departments/create">
-
-                {{ csrf_field() }}
+                @csrf
 
                 <div class="input-field col m12 s12">
                     <input type="text" id="department_name" name="department_name" maxlength="50"  value="{{ old('department_name') }}">

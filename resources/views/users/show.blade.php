@@ -4,11 +4,15 @@
 
     <div class="row">
         <div class="col m12 s12">
+            @include('layouts.messages')
+
             <h3>{{ $user->name }}</h3>
             <form method="POST" action="/users/delete/{{ $user->id }}">
                 @csrf
 
                 <a href="/users/edit/{{ $user->id }}" class="btn btn-link light-blue darken-2">Edit User</a>
+
+                <a href="/users/reset_password/{{ $user->id }}" class="btn btn-link amber darken-2">Reset Password</a>
 
                 <button class="btn btn-link red accent-2" data-confirm="Are you sure you want to delete this user?">Delete User</button>
             </form>

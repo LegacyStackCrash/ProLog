@@ -26,6 +26,11 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/users/edit/{user}', 'UserController@edit');
     Route::post('/users/edit/{user}', 'UserController@save');
     Route::post('/users/delete/{user}', 'UserController@destroy');
+    Route::get('/users/reset_password/{user}', 'UserController@reset_password');
+
+    Route::get('/user/settings', 'UserController@settings');
+    Route::post('/user/change_settings', 'UserController@change_settings');
+    Route::post('/user/change_password', 'UserController@change_password');
 
     Route::get('/departments', 'DepartmentsController@index');
     Route::get('/departments/create', 'DepartmentsController@create');

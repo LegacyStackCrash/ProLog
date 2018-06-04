@@ -13,6 +13,7 @@
                 <thead>
                 <tr>
                     <th>Name</th>
+                    <th>Email Address</th>
                     <th>Department(s)</th>
                 </tr>
                 </thead>
@@ -30,6 +31,7 @@
 
                         <tr>
                             <td><a href="/users/{{ $user->id }}">{{ $user->name }}</a></td>
+                            <td><a href="/users/{{ $user->id }}">{{ $user->email }}</a></td>
                             <td>
                                 @foreach($user->departments as $department)
                                     {{ $loop->first ? '' : ', ' }}

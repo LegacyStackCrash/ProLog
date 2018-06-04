@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
 
 use App\User;
 use App\Departments;
@@ -21,7 +22,9 @@ class UserController extends Controller
 
     public function show(User $user)
     {
-        return view('users.show', compact('user'));
+        $message = Session::get('message');
+
+        return view('users.show', compact(['user', 'message']));
     }
 
     public function create()
@@ -83,6 +86,54 @@ class UserController extends Controller
         }
 
         return redirect('users')->with('message', 'User updated successfully!');
+    }
+
+    public function reset_password(User $user)
+    {
+        $password_generate = User::password_generate();
+        $password_generate_encrypted = bcrypt($password_generate);
+
+        $user->update([
+            'password' => $password_generate_encrypted
+        ]);
+
+        return back()->with('message', 'New temporary password for '.$user->email.' is: '.$password_generate);
+    }
+
+    public function settings()
+    {
+        $user = Auth::user();
+        $message = Session::get('message');
+
+        return view('users.settings', compact(['user', 'message']));
+    }
+
+    public function change_settings(Request $request)
+    {
+        $this->validate(request(), [
+            'name' => 'required',
+            'email' => 'required',
+        ]);
+
+        $request->user()->update([
+            'name' => $request->name,
+            'email' => $request->email
+        ]);
+
+        return back()->with('message', 'Your settings have been updated successfully!');
+    }
+
+    public function change_password(Request $request)
+    {
+        $this->validate(request(), [
+            'password' => 'required|confirmed',
+        ]);
+
+        $request->user()->update([
+            'password' => bcrypt($request->password),
+        ]);
+
+        return back()->with('message', 'User password has been updated successfully!');
     }
 
     public function destroy(User $user)
