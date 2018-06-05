@@ -40,7 +40,7 @@
 
     <hr/>
 
-    <div class="row">
+    <div class="row info">
         <div class="col m4 s12">
             <div class="card">
                 <div class="card-content">

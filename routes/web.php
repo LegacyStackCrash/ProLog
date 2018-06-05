@@ -55,6 +55,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/projects/edit/{project}', 'ProjectsController@edit');
     Route::post('/projects/edit/{project}', 'ProjectsController@save');
     Route::post('/projects/delete/{project}', 'ProjectsController@destroy');
+    Route::post('/projects/upload/{project}', 'ProjectsController@upload');
 
     Route::get('/issues', 'IssuesController@index');
     Route::get('/issues/create', 'IssuesController@create');
@@ -63,6 +64,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/issues/edit/{issue}', 'IssuesController@edit');
     Route::post('/issues/edit/{issue}', 'IssuesController@save');
     Route::post('/issues/delete/{issue}', 'IssuesController@destroy');
+    Route::post('/issues/upload/{issue}', 'IssuesController@upload');
 
     Route::get('/logout', function(){
         auth()->logout();

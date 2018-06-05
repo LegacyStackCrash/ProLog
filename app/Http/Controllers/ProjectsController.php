@@ -9,7 +9,7 @@ use App\Departments;
 use App\Customers;
 use App\User;
 use Illuminate\Support\Facades\Session;
-
+use Illuminate\Support\Facades\DB;
 
 class ProjectsController extends Controller
 {
@@ -27,7 +27,11 @@ class ProjectsController extends Controller
 
     public function show(Projects $project)
     {
-        return view('projects.show', compact('project'));
+        $message = Session::get('message');
+
+        $attachments = DB::select('select * from files_projects where projects_id = :id order by created_at desc', ['id' => $project->id]);
+
+        return view('projects.show', compact(['project', 'message', 'attachments']));
     }
 
     public function create()
@@ -121,6 +125,27 @@ class ProjectsController extends Controller
         }
 
         return redirect('projects')->with('message', 'Project #'.$project->id.' updated successfully!');
+    }
+
+    public function upload(Request $request, Projects $project)
+    {
+        $this->validate(request(), [
+            'attachments' => 'required',
+        ]);
+
+        foreach ($request->attachments as $attachment) {
+            //Save file(s) to server.
+            $attachment->storeAs('projects/'.$project->id, $attachment->getClientOriginalName());
+
+            //Insert into database.
+            DB::table('files_projects')->insert([
+                'projects_id' => $project->id,
+                'file' => $attachment->getClientOriginalName(),
+                'created_at' => date('Y-m-d H:i:s'),
+            ]);
+        }
+
+        return back()->with('message', 'File(s) uploaded successfully!');
     }
 
     public function destroy(Projects $project)
