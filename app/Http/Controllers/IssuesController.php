@@ -9,6 +9,7 @@ use App\Departments;
 use App\Customers;
 use App\User;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\DB;
 
 class IssuesController extends Controller
 {
@@ -26,7 +27,11 @@ class IssuesController extends Controller
 
     public function show(Issues $issue)
     {
-        return view('issues.show', compact('issue'));
+        $message = Session::get('message');
+
+        $attachments = DB::select('select * from files_issues where issues_id = :id order by created_at desc', ['id' => $issue->id]);
+
+        return view('issues.show', compact(['issue', 'message', 'attachments']));
     }
 
     public function create()
@@ -148,6 +153,27 @@ class IssuesController extends Controller
         }
 
         return redirect('issues')->with('message', 'Issue #'.$issue->id.' updated successfully!');
+    }
+
+    public function upload(Request $request, Issues $issue)
+    {
+        $this->validate(request(), [
+            'attachments' => 'required',
+        ]);
+
+        foreach ($request->attachments as $attachment) {
+            //Save file(s) to server.
+            $attachment->storeAs('issues/'.$issue->id, $attachment->getClientOriginalName());
+
+            //Insert into database.
+            DB::table('files_issues')->insert([
+                'issues_id' => $issue->id,
+                'file' => $attachment->getClientOriginalName(),
+                'created_at' => date('Y-m-d H:i:s'),
+            ]);
+        }
+
+        return back()->with('message', 'File(s) uploaded successfully!');
     }
 
     public function destroy(Issues $issue)
