@@ -15,11 +15,11 @@ class CreateIssuesTable extends Migration
     {
         Schema::create('issues', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('customer_id')->unsigned();
+            $table->integer('customer_id')->unsigned()->index();
             $table->string('issue_name');
-            $table->char('issue_status', 1);
+            $table->char('issue_status', 1)->index();
             $table->text('issue_details')->nullable();
-            $table->dateTime('issue_date_time');
+            $table->dateTime('issue_date_time')->index();
             $table->dateTime('issue_date_time_completed')->nullable();
             $table->integer('issue_duration_days')->nullable();
             $table->integer('issue_duration_hours')->nullable();

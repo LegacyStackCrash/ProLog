@@ -15,9 +15,9 @@ class CreateDepartmentsIssuesTable extends Migration
     {
         Schema::create('departments_issues', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('issues_id');
+            $table->unsignedInteger('issues_id')->index();
             $table->foreign('issues_id')->references('id')->on('issues');
-            $table->unsignedInteger('departments_id');
+            $table->unsignedInteger('departments_id')->index();
             $table->foreign('departments_id')->references('id')->on('departments');
             $table->timestamps();
         });

@@ -15,11 +15,11 @@ class CreateProjectsTable extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('customer_id')->unsigned();
+            $table->integer('customer_id')->unsigned()->index();
             $table->string('project_name');
-            $table->char('project_status', 1);
+            $table->char('project_status', 1)->index();
             $table->text('project_details')->nullable();
-            $table->date('project_date');
+            $table->date('project_date')->index();
             $table->date('project_date_completed')->nullable();
             $table->timestamps();
         });

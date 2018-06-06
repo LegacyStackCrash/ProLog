@@ -15,7 +15,7 @@ class CreateFilesProjectsTable extends Migration
     {
         Schema::create('files_projects', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('projects_id');
+            $table->unsignedInteger('projects_id')->index();
             $table->foreign('projects_id')->references('id')->on('projects');
             $table->text('file');
             $table->timestamps();

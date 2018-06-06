@@ -15,7 +15,7 @@ class CreateFilesIssuesTable extends Migration
     {
         Schema::create('files_issues', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('issues_id');
+            $table->unsignedInteger('issues_id')->index();
             $table->foreign('issues_id')->references('id')->on('issues');
             $table->text('file');
             $table->timestamps();

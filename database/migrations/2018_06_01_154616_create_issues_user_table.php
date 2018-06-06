@@ -15,9 +15,9 @@ class CreateIssuesUserTable extends Migration
     {
         Schema::create('issues_user', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('issues_id');
+            $table->unsignedInteger('issues_id')->index();
             $table->foreign('issues_id')->references('id')->on('issues');
-            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('user_id')->index();
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
