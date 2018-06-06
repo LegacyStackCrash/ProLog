@@ -2,10 +2,10 @@
 
 @section('content')
 
-    @include('layouts.messages')
-
     <div class="row">
         <div class="col m12 s12">
+            @include('layouts.messages')
+
             <h3>{{ $issue->issue_name }}</h3>
 
             <form method="POST" action="/issues/delete/{{ $issue->id }}">

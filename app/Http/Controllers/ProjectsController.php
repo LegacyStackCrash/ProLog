@@ -58,7 +58,7 @@ class ProjectsController extends Controller
             'project_name' => request('project_name'),
             'project_status' => request('project_status'),
             'project_date' => request('project_date'),
-            'project_completed_date' => request('project_completed_date'),
+            'project_date_completed' => request('project_date_completed'),
             'customer_id' => request('customer_id'),
             'project_details' => request('project_details'),
         ]);
