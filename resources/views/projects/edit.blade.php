@@ -38,7 +38,7 @@
                 </div>
 
                 <div class="input-field col m6 s12">
-                    <input type="text" class="datepicker" name="project_date_completed" id="project_date_completed"  value="{{ $project->project_date_completed->toDateString() }}">
+                    <input type="text" class="datepicker" name="project_date_completed" id="project_date_completed"  value="{{ ($project->project_date_completed) ? $project->project_date_completed->toDateString() : '' }}">
                     <label for="project_date_completed">Completed Date</label>
                 </div>
 
