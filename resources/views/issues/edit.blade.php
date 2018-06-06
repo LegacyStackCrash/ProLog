@@ -61,12 +61,12 @@
                 </div>
 
                 <div class="input-field col m4 s12">
-                    <input type="text" class="datepicker" name="issue_date_completed" id="issue_date_completed" value="{{ $issue->issue_date_time_completed->toDateString() }}">
+                    <input type="text" class="datepicker" name="issue_date_completed" id="issue_date_completed" value="{{ ($issue->issue_date_time_completed) ? $issue->issue_date_time_completed->toDateString() : '' }}">
                     <label for="issue_completed_date">Completed Date</label>
                 </div>
 
                 <div class="input-field col m2 s12">
-                    <input type="text" class="timepicker" name="issue_time_completed" id="issue_time_completed" value="{{ $issue->issue_date_time_completed->format('H:i') }}">
+                    <input type="text" class="timepicker" name="issue_time_completed" id="issue_time_completed" value="{{ ($issue->issue_date_time_completed) ? $issue->issue_date_time_completed->format('H:i') : '' }}">
                     <label for="issue_time_completed">Time</label>
                 </div>
 

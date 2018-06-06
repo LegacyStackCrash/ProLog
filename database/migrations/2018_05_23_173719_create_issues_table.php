@@ -18,7 +18,7 @@ class CreateIssuesTable extends Migration
             $table->integer('customer_id')->unsigned();
             $table->string('issue_name');
             $table->char('issue_status', 1);
-            $table->text('issue_details');
+            $table->text('issue_details')->nullable();
             $table->dateTime('issue_date_time');
             $table->dateTime('issue_date_time_completed')->nullable();
             $table->integer('issue_duration_days')->nullable();

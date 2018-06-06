@@ -20,9 +20,27 @@
 
     <div class="row">
         <div class="col m12 s12">
-            <strong>Issue Date: </strong> {{ $issue->issue_date_time->format('l, F jS Y H:iA') }}
+            <strong>Issue Date/Time: </strong> {{ $issue->issue_date_time->format('l, F jS Y H:iA') }}
         </div>
     </div>
+
+    @if($issue->issue_date_time_completed)
+        <div class="row">
+            <div class="col m12 s12">
+                <strong>Completed Date/Time: </strong> {{ $issue->issue_date_time_completed->format('l, F jS Y H:iA') }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col m12 s12">
+                <strong>Days: </strong> {{ $issue->issue_duration_days }}
+                &nbsp;&nbsp;&nbsp;
+                <strong>Hours: </strong> {{ $issue->issue_duration_hours }}
+                &nbsp;&nbsp;&nbsp;
+                <strong>Minutes: </strong> {{ $issue->issue_duration_minutes }}
+            </div>
+        </div>
+    @endif
 
     @if(trim($issue->issue_details)!='')
         <div class="row">

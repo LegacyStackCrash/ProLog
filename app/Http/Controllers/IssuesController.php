@@ -60,9 +60,29 @@ class IssuesController extends Controller
 
         //Format date/times.
         $issue_date_time = $request->issue_date.' '.$request->issue_time.':00';
-        $issue_date_time_completed = $request->issue_date_completed.' '.$request->issue_time_completed.':00';
-        if (trim($issue_date_time_completed)=='') {
-            $issue_date_time_completed = NULL;
+        $issue_date_time_completed = NULL;
+        if ($request->issue_date_completed) {
+            if ($request->issue_time_completed) {
+                $issue_date_time_completed = $request->issue_date_completed.' '.$request->issue_time_completed.':00';
+            } else {
+                $issue_date_time_completed = $request->issue_date_completed.' 00:00:00';
+            }
+        }
+
+        //Format durations.
+        $issue_duration_days = 0;
+        if ($request->issue_duration_days) {
+            $issue_duration_days = $request->issue_duration_days;
+        }
+
+        $issue_duration_hours = 0;
+        if ($request->issue_duration_hours) {
+            $issue_duration_hours = $request->issue_duration_hours;
+        }
+
+        $issue_duration_minutes = 0;
+        if ($request->issue_duration_minutes) {
+            $issue_duration_minutes = $request->issue_duration_minutes;
         }
 
         $issue = Issues::create([
@@ -70,9 +90,9 @@ class IssuesController extends Controller
             'issue_status' => request('issue_status'),
             'issue_date_time' => $issue_date_time,
             'issue_date_time_completed' => $issue_date_time_completed,
-            'issue_duration_days' => request('issue_duration_days'),
-            'issue_duration_hours' => request('issue_duration_hours'),
-            'issue_duration_minutes' => request('issue_duration_minutes'),
+            'issue_duration_days' => $issue_duration_days,
+            'issue_duration_hours' => $issue_duration_hours,
+            'issue_duration_minutes' => $issue_duration_minutes,
             'customer_id' => request('customer_id'),
             'issue_details' => request('issue_details'),
         ]);
