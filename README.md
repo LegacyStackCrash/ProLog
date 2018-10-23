@@ -22,4 +22,5 @@ php artisan serve         # Runs the application on a local web server
 ```
 
 3. View the application:
+
 In your browser, view the application and login ( Username: admin@example.com | Password: password )
