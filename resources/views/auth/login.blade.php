@@ -6,7 +6,10 @@
 
     <hr/>
 
-    @include('layouts.errors')
+    <div class="row">
+        @include('layouts.demo')
+        @include('layouts.errors')
+    </div>
 
     <form method="POST" action="{{ route('login') }}">
         @csrf
